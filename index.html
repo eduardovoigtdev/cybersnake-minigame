@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cyber Snake - Minigame</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@500;700&display=swap');
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-wrapper">
+        <header>
+            <div class="score-box">PONTUAÇÃO: <span id="score">0</span></div>
+            <div class="high-score-box">RECORDE: <span id="highScore">0</span></div>
+        </header>
+
+        <div id="canvas-container">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            
+            <div id="screen-start" class="ui-screen active">
+                <h1>CYBER<br>SNAKE</h1>
+                <button class="btn" onclick="initGame()">COMEÇAR</button>
+                <div class="instructions">
+                    <p>Use <span class="key">W</span><span class="key">A</span><span class="key">S</span><span class="key">D</span> ou Setas</p>
+                    <p><span class="key">Space</span> para Pausar/Reiniciar</p>
+                </div>
+            </div>
+
+            <div id="screen-gameover" class="ui-screen">
+                <h2 class="glitch">GAME OVER</h2>
+                <p style="margin-bottom: 20px; font-family: 'Press Start 2P', cursive; font-size: 12px;">PONTOS: <span id="finalScore" style="color: var(--neon-green)">0</span></p>
+                <button class="btn" onclick="initGame()">Tentar Novamente</button>
+            </div>
+
+            <div id="screen-pause" class="ui-screen">
+                <h2>PAUSADO</h2>
+                <button class="btn" onclick="togglePause()">Continuar</button>
+            </div>
+        </div>
+
+        <div id="mobile-controls">
+            <div class="d-btn" id="btn-up">▲</div>
+            <div class="d-btn" id="btn-left">◄</div>
+            <div class="d-btn" id="btn-down">▼</div>
+            <div class="d-btn" id="btn-right">►</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+  
+</body>
+</html>
